@@ -1,5 +1,6 @@
 Find nth node from the end of a Linked List.
 
+SOLUTION 1 :
 
 #include<iostream>
 using namespace std;
@@ -70,3 +71,75 @@ cin>>pos;
 print(head,pos);
 return 0;
 }
+
+Time Complexity = O(n)+O(n) = O(n)
+
+
+SOLUTION 2: (Using 1 scan in print function)
+
+#include<iostream>
+using namespace std;
+struct node{
+int data;
+node *next;
+};
+void show(node *head){
+node *current = head;
+cout<<"The current list is ";
+while(current){
+    cout<<current->data<<" ";
+    current = current->next;
+}
+cout<<endl;
+}
+void insert(node **head,int data){
+node *link;
+link = new node;
+if(!link)
+    cout<<"Insufficient Memory";
+link->data = data;
+link->next = NULL;
+if(*head==NULL){
+    *head = link;
+}
+else{
+    node *current = *head;
+    while(current->next!=NULL){
+        current = current->next;
+    }
+    current->next = link;
+}
+show(*head);
+}
+void print(node *head,int n){
+node *pNthNode,*pTemp;
+int count=0;
+pNthNode = pTemp = head;
+while(pTemp){
+    count++;
+    if(count>n)
+        pNthNode = pNthNode->next;
+    pTemp = pTemp->next;
+}
+if(pNthNode)
+cout<<"The value of nth node from last is "<<pNthNode->data;
+else
+cout<<"No value";
+}
+int main(){
+node *head = NULL;
+int n,pos;
+cout<<"Enter the elements to be inserted (0 to end)"<<endl;
+while(cin>>n){
+    if(n)
+        insert(&head,n);
+    else
+        break;
+}
+cout<<"Enter the position of node from last "<<endl;
+cin>>pos;
+print(head,pos);
+return 0;
+}
+
+Time Complexity = O(n)
