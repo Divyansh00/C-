@@ -1,0 +1,56 @@
+Implement Stack using Linked List
+
+
+Solution 
+
+#include<iostream>
+using namespace std;
+struct node{
+int data;
+node *next;
+};
+void show(node *head){
+node *current = head;
+cout<<"The list  is: ";
+while(current!=NULL){
+    cout<<current->data<<" ";
+    current = current->next;
+}
+cout<<endl;
+}
+void push(node **head,int data){
+node *link;
+link = new node;
+if(!link)
+    cout<<"Insufficient Memory"<<endl;
+link->data = data;
+link->next = *head;
+*head = link;
+show(*head);
+}
+void pop(node **head){
+if(*head!=NULL){
+node *temp;
+temp = *head;
+*head = temp->next;
+cout<<"The deleted value is "<<temp->data<<endl;
+delete temp;
+show(*head);
+}
+else
+    cout<<"Underflow";
+}
+int main(){
+node *head = NULL;
+int n;
+cout<<"Enter the data (0 to stop)"<<endl;
+while(true){
+cin>>n;
+if(!n)
+    break;
+push(&head,n);
+}
+pop(&head);
+pop(&head);
+return 0;
+}
