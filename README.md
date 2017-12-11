@@ -1,3 +1,4 @@
-# C-
+# Data Structures and Algorithms
 Hello!!
-Here I will upload the codes that I have submitted in various competitive programming
+Here I will upload the code on implementation of data structures and algorithms that I have made while practicing on various competitive programming.
+Feel free to use them!!
