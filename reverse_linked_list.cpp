@@ -1,3 +1,7 @@
+//Reverse a singly linked list.
+
+
+
 #include<iostream>
 using namespace std;
 struct node{
