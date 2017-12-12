@@ -1,3 +1,5 @@
+//Insert a node in a sorted linked list.
+
 #include<iostream>
 using namespace std;
 struct node{
