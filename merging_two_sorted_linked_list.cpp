@@ -1,3 +1,5 @@
+//Given two sorted Linked Lists, we need to merge them into the third list in sorted order.
+
 #include<iostream>
 using namespace std;
 struct node{
