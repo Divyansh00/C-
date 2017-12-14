@@ -1,3 +1,5 @@
+//How will you find the middle of the linked list?
+
 #include<iostream>
 using namespace std;
 struct node{
