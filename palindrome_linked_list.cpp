@@ -1,3 +1,5 @@
+//How will you check if the linked list is palindrome or not?
+
 #include<iostream>
 using namespace std;
 struct node
